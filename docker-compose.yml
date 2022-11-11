@@ -1,11 +1,12 @@
 version: '3.3'
 services:
+    ## HONEYGAIN
     honeygain:
         container_name: honeygain
         image: honeygain/honeygain
         command: -tou-accept -email $EMAIL -pass $HONEYGAIN_PASSWORD -device $DEVICE_NAME
         restart: unless-stopped
-
+    ## REPOCKET
     repocket:
         container_name: repocket
         image: repocket/repocket:arm64
@@ -13,7 +14,7 @@ services:
             - RP_EMAIL=$EMAIL
             - RP_PASSWORD=$REPOCKET_PASSWORD
         restart: always
-    
+    ## PACKETSTREAM - NO FUNCIONA EN LA PI ZERO
     Packetstream:
         container_name: packetstream
         image: packetstream/psclient:latest
@@ -21,6 +22,7 @@ services:
             - CID=$PACKETSTREAM_CID
         restart: always
         
+    ## TRAFF MONETIZER
     TraffMonetizer:
         container_name: traffmonetizer
         image: traffmonetizer/cli:arm32v7
