@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  honeygain:
+    container_name: honeygain
+    image: honeygain/honeygain
+    command: -tou-accept -email my.name@email.com -pass mylamepassword -device sweethoney01
+    restart: unless-stopped
