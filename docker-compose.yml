@@ -4,6 +4,5 @@ services:
     honeygain:
         container_name: honeygain
         image: honeygain/honeygain
-        command: -tou-accept -email $EMAIL -pass $HONEYGAIN_PASSWORD 
--device $DEVICE_NAME
+        command: -tou-accept -email $EMAIL -pass $HONEYGAIN_PASSWORD -device $DEVICE_NAME
         restart: unless-stopped
