@@ -20,3 +20,11 @@ services:
         environment:
             - CID=$PACKETSTREAM_CID
         restart: always
+        
+    TraffMonetizer:
+        container_name: traffmonetizer
+        image: traffmonetizer/cli:arm32v7
+        command: start accept status --token ${TRAFFMONETIZER_ID} --device-name $DEVICE_NAME
+        environment:
+            - TRAFFMONETIZER_DUMMY=''
+        restart: always
