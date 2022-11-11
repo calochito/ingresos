@@ -5,3 +5,11 @@ services:
         image: honeygain/honeygain
         command: -tou-accept -email $EMAIL -pass $HONEYGAIN_PASSWORD -device $DEVICE_NAME
         restart: unless-stopped
+
+    repocket:
+        container_name: repocket
+        image: repocket/repocket:arm64
+        environment:
+            - RP_EMAIL=$EMAIL
+            - RP_PASSWORD=$REPOCKET_PASSWORD
+        restart: always
