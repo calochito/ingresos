@@ -30,3 +30,11 @@ services:
         environment:
             - TRAFFMONETIZER_DUMMY=''
         restart: always
+        
+    ## Peer2Profit    
+    Peer2profit:
+        container_name: peer2profit
+        image: peer2profit/peer2profit_linux:latest
+        environment:
+            - P2P_EMAIL=$EMAIL
+        restart: always
