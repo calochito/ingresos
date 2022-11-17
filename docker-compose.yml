@@ -38,3 +38,10 @@ services:
         environment:
             - P2P_EMAIL=$EMAIL
         restart: always
+
+    ## Pawns    
+    Pawns:
+        container_name: Pawns
+        image: iproyal/pawns-cli:latest
+        command: '-email=${EMAIL} -password=${PAWNS_PWD} -device-name=${DEVICE_NAME} -device-id=${DEVICE_ID} -accept-tos'
+        restart: always
